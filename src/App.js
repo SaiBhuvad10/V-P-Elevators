@@ -19,7 +19,7 @@ function App() {
       <LottieAnimation />
       {<Contact />}
       {<Footer />}
-      {/* <FloatingContact /> */}
+      {<FloatingContact />}
     </div>
   );
 }
