@@ -1,11 +1,10 @@
 import Navbar from "./components/Navbar";
 import FloatingContact from "./components/FloatingContact";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Carousel from "./components/Carousel";
 import QuickStats from "./components/QuickStats";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import LottieAnimation from './components/LottieAnimation';
 import './App.css';
 
 
@@ -16,7 +15,6 @@ function App() {
       {<Home />}
       {<Carousel />}
       {<QuickStats />}
-      <LottieAnimation />
       {<Contact />}
       {<Footer />}
       {<FloatingContact />}
