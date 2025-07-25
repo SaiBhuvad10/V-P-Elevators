@@ -1,21 +1,23 @@
 import React from 'react';
-import logoImage from '../assets/Logo.jpeg';
-import '../App.css';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/Logo.png'; // Replace with correct path
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-wrapper">
-        <img src={logoImage} alt="V&P Elevators Logo" className="logo-img" />
+        <div className="logo-container">
+          <img src={logo} alt="V&P Elevators Logo" />
+        </div>
         <span className="brand-name">V&P Elevators</span>
       </div>
 
-      <ul className="nav-links">
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div className="nav-links">
+        <NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink>
+        <NavLink to="/services" className="nav-link" activeClassName="active">Services</NavLink>
+        <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
+        <NavLink to="/contact" className="nav-link" activeClassName="active">Contact</NavLink>
+      </div>
     </nav>
   );
 }

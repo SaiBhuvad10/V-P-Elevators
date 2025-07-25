@@ -2,7 +2,8 @@ import React from 'react';
 import whatsappLogo from '../assets/whatsapp-logo.png';
 import facebookLogo from '../assets/facebook-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
-import '../App.css'; // Assuming your CSS is here
+import '../App.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -23,10 +24,10 @@ function Footer() {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#carousel">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+           <li><Link to="/">Home</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/about">About</Link></li>
           </ul>
         </div>
 
@@ -36,10 +37,10 @@ function Footer() {
             <a href="https://wa.me/919309729749" target="_blank" rel="noopener noreferrer">
               <img src={whatsappLogo} alt="WhatsApp" className="social-logo" />
             </a>
-            <a href="https://facebook.com/YourPage" target="_blank" rel="noopener noreferrer">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <img src={facebookLogo} alt="Facebook" className="social-logo" />
             </a>
-            <a href="https://instagram.com/YourProfile" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <img src={instagramLogo} alt="Instagram" className="social-logo" />
             </a>
           </div>
