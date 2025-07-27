@@ -6,45 +6,42 @@ body {
   color: #333;
 }
 
-/* === NAVBAR === */
+/* ====== Navbar Base ====== */
 .navbar {
   display: flex;
-  justify-content: space-between; /* changed from center */
-  align-items: center;
-  background-color: #f0f0f0;
-  padding: 10px 30px;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
 }
 
+/* ====== Brand Section: Logo + Brand Name + Hamburger ====== */
+.brand-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
+/* ====== Logo and Brand Name ====== */
 .logo-wrapper {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.logo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%; /* Ensure image itself is circular */
-}
-.brand-name {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #0072ce;
-  font-family: 'Roboto', sans-serif;
-}
-
-
 .logo-container {
   position: relative;
   display: inline-block;
-  width: 50px;       /* Smaller size */
+  width: 50px;
   height: 50px;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden;   /* Hide corners */
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .logo-container img {
@@ -54,6 +51,18 @@ body {
   border-radius: 4px;
 }
 
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0072ce;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ====== Navigation Links ====== */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
 
 .nav-link {
   text-decoration: none;
@@ -79,6 +88,94 @@ body {
   border-bottom: 2px solid #007bff;
   font-weight: bold;
 }
+
+/* ====== Hamburger Icon ====== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.open .top {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.open .middle {
+  opacity: 0;
+}
+
+.hamburger.open .bottom {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ====== Responsive Styling ====== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0%);
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* ====== Large Screen Layout Reset ====== */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    gap: 20px;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
 
 /* === Home SECTION === */
 .hero {
@@ -299,10 +396,10 @@ button:hover {
   background-color: #005da8;
 }
 
-/* === FOOTER === */
+/* ===== Footer Styles ===== */
 .vp-footer {
-  background-color: #0a0a23;
-  color: #f1f1f1;
+  background-color: #f4f4f4;
+  color: #333;
   padding: 40px 20px 20px;
   font-family: 'Roboto', sans-serif;
 }
@@ -311,32 +408,29 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 30px;
 }
 
-.footer-about,
-.footer-contact,
-.footer-links,
-.footer-socials {
-  flex: 1 1 200px;
+.footer-container > div {
+  flex: 1 1 220px;
+  min-width: 220px;
 }
 
 .footer-about h3,
 .footer-contact h4,
 .footer-links h4,
 .footer-socials h4 {
-  color: #fff;
-  font-size: 18px;
   margin-bottom: 10px;
+  color: #0072ce;
+  font-weight: 600;
 }
 
-.footer-about p,
 .footer-contact p,
+.footer-about p,
 .footer-links ul,
-.footer-bottom p {
-  color: #ccc;
+.footer-socials a {
   font-size: 14px;
   line-height: 1.6;
 }
@@ -344,32 +438,34 @@ button:hover {
 .footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-links li {
+.footer-links ul li {
   margin-bottom: 8px;
 }
 
-.footer-links a {
-  color: #ccc;
+.footer-links ul li a {
   text-decoration: none;
+  color: #333;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: #00c896;
+.footer-links ul li a:hover {
+  color: #007bff;
 }
 
-.footer-socials .social-icons {
+.social-icons {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-top: 10px;
 }
 
 .social-logo {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
 }
 
 .social-logo:hover {
@@ -377,21 +473,51 @@ button:hover {
 }
 
 .footer-bottom {
-  margin-top: 30px;
   text-align: center;
   font-size: 13px;
-  border-top: 1px solid #333;
-  padding-top: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
 }
 
 .footer-bottom a {
-  color: #aaa;
-  text-decoration: underline;
-  margin: 0 5px;
+  display: inline-block;
+  margin: 5px 10px 0;
+  color: #0072ce;
+  text-decoration: none;
+  font-size: 12px;
 }
 
 .footer-bottom a:hover {
-  color: #00c896;
+  text-decoration: underline;
+}
+
+/* ===== Responsive Styling ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container > div {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+
+  .footer-bottom a {
+    display: block;
+    margin: 4px auto;
+  }
 }
 
 /* === Carousel === */
