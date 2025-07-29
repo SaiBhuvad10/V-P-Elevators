@@ -59,48 +59,6 @@ function Services() {
           </div>
         </div>
 
-        <div className="stats-section" style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '40px',
-          marginBottom: '48px',
-          flexWrap: 'wrap'
-        }}>
-          <div className="stat-box" style={{
-            background: '#fff',
-            borderRadius: 12,
-            boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-            padding: '32px 24px',
-            textAlign: 'center',
-            minWidth: 160
-          }}>
-            <h2 style={{ fontSize: '2rem', color: '#0077b6', marginBottom: 8, fontWeight: 700 }}>200+</h2>
-            <p style={{ color: '#1a2236', fontWeight: 500 }}>Installations</p>
-          </div>
-          <div className="stat-box" style={{
-            background: '#fff',
-            borderRadius: 12,
-            boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-            padding: '32px 24px',
-            textAlign: 'center',
-            minWidth: 160
-          }}>
-            <h2 style={{ fontSize: '2rem', color: '#0077b6', marginBottom: 8, fontWeight: 700 }}>25+</h2>
-            <p style={{ color: '#1a2236', fontWeight: 500 }}>Years Experience</p>
-          </div>
-          <div className="stat-box" style={{
-            background: '#fff',
-            borderRadius: 12,
-            boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-            padding: '32px 24px',
-            textAlign: 'center',
-            minWidth: 160
-          }}>
-            <h2 style={{ fontSize: '2rem', color: '#0077b6', marginBottom: 8, fontWeight: 700 }}>24/7</h2>
-            <p style={{ color: '#1a2236', fontWeight: 500 }}>Support</p>
-          </div>
-        </div>
-
         <div className="cta-section" style={{
           background: 'linear-gradient(90deg, #0077b6 0%, #00b4d8 100%)',
           borderRadius: 16,
