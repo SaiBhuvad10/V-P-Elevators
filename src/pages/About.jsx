@@ -1,5 +1,5 @@
 import '../App.css';
-import aboutBanner from '../assets/about-banner.jpg';
+import aboutBanner from '../assets/about-banner.webp';
 
 const styles = {
   container: {
