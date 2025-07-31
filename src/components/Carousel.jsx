@@ -3,9 +3,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../App.css"; // Ensure this is imported
 
-import elevator1 from "../assets/elevator1.jpg";
-import elevator2 from "../assets/elevator2.jpg";
-import elevator3 from "../assets/elevator3.jpg";
+import elevator1 from "../assets/elevator1.webp";
+import elevator2 from "../assets/elevator2.webp";
+import elevator3 from "../assets/elevator3.webp";
 
 const Carousel = () => {
   const settings = {

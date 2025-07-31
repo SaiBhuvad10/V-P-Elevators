@@ -1,7 +1,7 @@
 import React from 'react';
-import whatsappLogo from '../assets/whatsapp-logo.png';
-import facebookLogo from '../assets/facebook-logo.png';
-import instagramLogo from '../assets/instagram-logo.png';
+import whatsappLogo from '../assets/whatsapp-logo.webp';
+import facebookLogo from '../assets/facebook-logo.webp';
+import instagramLogo from '../assets/instagram-logo.webp';
 import '../App.css';
 import { Link } from 'react-router-dom';
 

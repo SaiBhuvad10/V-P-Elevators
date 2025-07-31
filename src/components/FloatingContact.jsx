@@ -1,5 +1,5 @@
 import React from 'react';
-import whatsappLogo from '../assets/whatsapp-logo.png'; // adjust path if needed
+import whatsappLogo from '../assets/whatsapp-logo.webp'; // adjust path if needed
 import '../App.css';
 
 const FloatingContact = () => {

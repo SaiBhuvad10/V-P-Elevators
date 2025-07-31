@@ -1,7 +1,7 @@
 import React from 'react';
-import installImg from '../assets/Elevators_Install.jpg';
-import escalatorImg from '../assets/Escalators.jpg';
-import maintenanceImg from '../assets/Maintenance.jpeg';
+import installImg from '../assets/Elevators_Install.webp';
+import escalatorImg from '../assets/Escalators.webp';
+import maintenanceImg from '../assets/Maintenance.webp';
 import '../App.css';
 
 function Services() {

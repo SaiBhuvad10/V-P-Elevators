@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/Logo.png'; // Update the path if needed
+import logo from '../assets/Logo.webp'; // Update the path if needed
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
