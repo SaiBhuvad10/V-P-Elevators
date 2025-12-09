@@ -1,38 +1,47 @@
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import "../App.css"; // Ensure this is imported
+import React, { useState, useEffect } from "react";
 
-import elevator1 from "../assets/elevator1.webp";
-import elevator2 from "../assets/elevator2.webp";
-import elevator3 from "../assets/elevator3.webp";
+const slides = [
+  { id: 1, url: "/assets/elevator1.webp" },
+  { id: 2, url: "/assets/elevator2.webp" },
+  { id: 3, url: "/assets/elevator3.webp" },
+];
 
-const Carousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-  };
+function Carousel() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setCurrent((prev) => (prev + 1) % slides.length),
+      4000
+    );
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="carousel-section">
-      <h2 className="carousel-title">Our Elevators</h2>
-      <div className="carousel-wrapper">
-        <Slider {...settings}>
-          {[elevator1, elevator2, elevator3].map((img, i) => (
-            <div key={i}>
-              <img src={img} alt={`Elevator ${i + 1}`} className="carousel-image" />
-            </div>
-          ))}
-        </Slider>
+    <div className="relative w-full h-[70vh] overflow-hidden">
+      {slides.map((slide, idx) => (
+        <img
+          key={slide.id}
+          src={slide.url}
+          alt={`Slide ${idx}`}
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            idx === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`w-3 h-3 rounded-full ${
+              idx === current ? "bg-white" : "bg-gray-400"
+            }`}
+          />
+        ))}
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default Carousel;

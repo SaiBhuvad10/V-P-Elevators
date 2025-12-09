@@ -1,49 +1,48 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/Logo.webp'; // Update the path if needed
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/Logo.webp";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <nav className="navbar">
-      <div className="brand-section">
-        <div className="logo-wrapper">
-          <div className="logo-container">
-            <img src={logo} alt="V&P Elevators Logo" />
-          </div>
-          <span className="brand-name">V&P Elevators</span>
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="V&P Elevators" className="w-12 h-12" />
+          <span className="font-bold text-lg text-gray-800">V&P Elevators</span>
         </div>
 
-        {/* Hamburger icon for mobile */}
+        {/* Hamburger */}
         <div
-          className={`hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={toggleMenu}
+          className="lg:hidden cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <div className="bar top"></div>
-          <div className="bar middle"></div>
-          <div className="bar bottom"></div>
+          <div className="w-6 h-0.5 bg-gray-800 mb-1"></div>
+          <div className="w-6 h-0.5 bg-gray-800 mb-1"></div>
+          <div className="w-6 h-0.5 bg-gray-800"></div>
         </div>
-      </div>
 
-      {/* Navigation Links */}
-      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <NavLink to="/" className="nav-link" activeclassname="active">
-          Home
-        </NavLink>
-        <NavLink to="/about" className="nav-link" activeclassname="active">
-          About
-        </NavLink>
-        <NavLink to="/services" className="nav-link" activeclassname="active">
-          Services
-        </NavLink>
-        <NavLink to="/contact" className="nav-link" activeclassname="active">
-          Contact
-        </NavLink>
+        {/* Links */}
+        <div
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } lg:flex gap-6 font-medium text-gray-700`}
+        >
+          <NavLink to="/" className="hover:text-blue-600">
+            Home
+          </NavLink>
+          <NavLink to="/about" className="hover:text-blue-600">
+            About
+          </NavLink>
+          <NavLink to="/services" className="hover:text-blue-600">
+            Services
+          </NavLink>
+          <NavLink to="/contact" className="hover:text-blue-600">
+            Contact
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
