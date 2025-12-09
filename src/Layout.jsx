@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
-function App() {
+export default function Layout() {
   return (
     <>
       <Navbar />
@@ -15,5 +15,3 @@ function App() {
     </>
   );
 }
-
-export default App;
