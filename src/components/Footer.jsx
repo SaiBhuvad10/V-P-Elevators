@@ -19,7 +19,7 @@ function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-3">Contact</h4>
-          <p>📞 +91 8591268814/7977113536</p>
+          <p>📞  <a href="https://wa.me/918591268814" target="_blank" rel="noreferrer">+918591268814 </a>/  <a href="https://wa.me/917977113536" target="_blank" rel="noreferrer">+917977113536</a></p>
           <p>✉️ vandpelevators@gmail.com</p>
           <p>🏢 Mumbai, Maharashtra, India</p>
         </div>
@@ -39,13 +39,13 @@ function Footer() {
         <div>
           <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
           <div className="flex gap-4">
-            <a href="https://wa.me/918591268814" target="_blank">
+            <a href="https://wa.me/918591268814" target="_blank" rel="noreferrer">
               <img src={whatsappLogo} alt="WhatsApp" className="w-8 h-8" />
             </a>
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
               <img src={facebookLogo} alt="Facebook" className="w-8 h-8" />
             </a>
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
               <img src={instagramLogo} alt="Instagram" className="w-8 h-8" />
             </a>
           </div>
@@ -59,6 +59,7 @@ function Footer() {
           <a
             href="https://www.vecteezy.com/free-photos/elevator-maintenance"
             target="_blank"
+            rel="noreferrer"
             className="hover:text-white"
           >
             Image Credits: Vecteezy & Png Tree
