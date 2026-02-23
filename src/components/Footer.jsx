@@ -19,7 +19,7 @@ function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-3">Contact</h4>
-          <p>📞 +91 9309729749</p>
+          <p>📞 +91 8591268814/7977113536</p>
           <p>✉️ vandpelevators@gmail.com</p>
           <p>🏢 Mumbai, Maharashtra, India</p>
         </div>
@@ -39,7 +39,7 @@ function Footer() {
         <div>
           <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
           <div className="flex gap-4">
-            <a href="https://wa.me/919309729749" target="_blank">
+            <a href="https://wa.me/918591268814" target="_blank">
               <img src={whatsappLogo} alt="WhatsApp" className="w-8 h-8" />
             </a>
             <a href="https://facebook.com" target="_blank">
