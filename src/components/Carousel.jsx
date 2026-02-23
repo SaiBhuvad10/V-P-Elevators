@@ -29,7 +29,7 @@ function Carousel() {
           <img
             key={slide.id}
             src={slide.url}
-            alt={`Elevator image ${idx + 1}`}
+            alt={`Passenger elevator design ${idx + 1}`}
             className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${opacityClass}`}
           />
         );
